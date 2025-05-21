@@ -8,7 +8,7 @@ async function run() {
 
   if (isFeatureAvailable()) {
     const cacheKeys = getCacheKeys();
-    const allincartCliCacheDir = await globalCacheDir('shopware-cli');
+    const allincartCliCacheDir = await globalCacheDir('allincart-cli');
 
     if (existsSync(allincartCliCacheDir)) {
       await saveCache(
