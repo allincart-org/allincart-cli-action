@@ -68,8 +68,8 @@ export async function install(version: string) {
     debug(`Release ${version} is a pre-release`);
   }
 
-  exportVariable("SHOPWARE_CLI_VERSION", release.tag_name)
-  process.env.SHOPWARE_CLI_VERSION = release.tag_name;
+  exportVariable("ALLINCART_CLI_VERSION", release.tag_name)
+  process.env.ALLINCART_CLI_VERSION = release.tag_name;
 
   const allincartCliCacheDir = await globalCacheDir('allincart-cli');
 
