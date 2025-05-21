@@ -1,5 +1,5 @@
-name: 'Shopware CLI Action'
-description: 'GitHub Action for Shopware CLI, a command line tool helper for Shopware'
+name: 'Allincart CLI Action'
+description: 'GitHub Action for Allincart CLI, a command line tool helper for Allincart'
 author: 'shopware AG'
 branding:
   color: 'green'
@@ -7,7 +7,7 @@ branding:
 
 inputs:
   version:
-    description: 'Shopware CLI version'
+    description: 'Allincart CLI version'
     default: 'latest'
     required: false
   token:
