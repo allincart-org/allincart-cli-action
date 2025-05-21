@@ -1,0 +1,33 @@
+name: Test
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup repo
+        uses: actions/checkout@v4
+
+      - name: Install Allincart CLI
+        uses: ./.
+
+      - name: Test binary
+        run: allincart-cli --version
+
+      - name: Clone SwagPlatformDemoData
+        run: git clone https://github.com/allincart-org/SwagPlatformDemoData.git
+
+      - name: Zip SwagPlatformDemoData
+        run: allincart-cli extension zip SwagPlatformDemoData
+
+      - name: Validate
+        run: allincart-cli extension validate SwagPlatformDemoData-*.zip
